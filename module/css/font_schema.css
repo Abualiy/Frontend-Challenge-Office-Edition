@@ -1,0 +1,15 @@
+h1, h2, h3, a {
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body p {
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.code {
+    font-family: 'Fira Code', 'Source Code Pro', monospace;
+}
+
+.quotes {
+    font-family: 'Merriweather', 'Georgia', serif;
+}

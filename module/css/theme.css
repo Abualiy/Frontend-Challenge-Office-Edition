@@ -1,0 +1,33 @@
+/* theme for light mode */
+:root {
+    --base-color: #f9fafb;
+    --base-variant: #ffffff;
+    --primary-text: #007acc;
+    --primary-text-hover: #0c476e;
+    --text-color: #111827 ;
+    --secondary-text: #efefef;
+    --accent-text: #808080;
+    --primary-color: #3a435d;
+    --primary-hover: #212634;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border: #d8d8d9;
+    --shadow: #0000004d;
+}
+
+/* theme for dark mode */
+.dark_mode {
+    --base-color: #202021 ;
+    --base-variant: #29292a;
+    --text-color: #f8fafc;
+    --secondary-text: #efefef;
+    --primary-text: #007acc;
+    --primary-text-hover: #428ec0;
+    --accent-text: #808080;
+    --primary-color: #3a435d;
+    --primary-hover: #212634;
+    --accent-color: #3b82f6 ;
+    --accent-hover: #60a5fa ;
+    --border: #24272c ;
+    --shadow: #0000004d;
+}

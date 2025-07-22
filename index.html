@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeyn Tech | Developers dashboard</title>
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Loading -->
+    <!-- <div class="loader_container" id="loader">
+        <div class="loader">
+            <div class="box">
+                <div class="logo">
+                    <p class="a">Alfeyn</p>
+                    <p class="t">Tech</p>
+                </div>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div> -->
+
+    <div class="main_container " id="main-content">
+        <!-- header -->
+        <div class="header">
+            <section>
+                <img src="./assets/logo_2.jpg" alt="alfeyn_tech_logo" width="200px">
+                <h1 id="greeting"></h1>
+            </section>
+
+            <div class="icons">
+                <span class="dark_mode ">
+                    <label class="theme-switch">
+                        <input type="checkbox" class="theme-switch__checkbox" id="theme_switch">
+                        <div class="theme-switch__container">
+                            <div class="theme-switch__clouds"></div>
+                            <div class="theme-switch__stars-container">
+                                <img src="./assets/icons/switch.svg" alt="switch">
+                            </div>
+                            <div class="theme-switch__circle-container">
+                                <div class="theme-switch__sun-moon-container">
+                                    <div class="theme-switch__moon">
+                                        <div class="theme-switch__spot"></div>
+                                        <div class="theme-switch__spot"></div>
+                                        <div class="theme-switch__spot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </span>
+                <span class="notification ">
+                    <button class="button">
+                        <svg viewBox="0 0 448 512" class="bell">
+                            <path
+                                d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z">
+                            </path>
+                        </svg>
+                    </button>
+                </span>
+                <span class="avatar icon">
+                    <img src="./assets/icons/avatar.svg" alt="avatar" width="50px">
+                </span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="left_side">
+                <button class="active">📆 Overview</button>
+                <button>✅ Tasks</button>
+                <button>📣 Communication</button>
+                <button>💬 Wellness</button>
+            </div>
+            <div class="main_content"></div>
+            <div class="right_side">
+                <!-- announcement -->
+                <div class="announcement-carousel">
+                    <button id="prev-btn">
+                        <img src="./assets/icons/arrow.svg" alt="">
+                    </button>
+
+                    <div class="announcement-container">
+                        <div class="announcement-slide active">
+                            <h3>🚀 Dark Mode Beta Released!</h3>
+                            <p>Try the new dark mode in all Alfeyn tools. Enable it with the toggle above.</p>
+                            <span class="announcement-date">July 15, 2025</span>
+                        </div>
+
+                        <div class="announcement-slide">
+                            <h3>🎉 Alfeyn Hackathon Coming Up!</h3>
+                            <p>Mark your calendars for the internal hackathon next Friday. Form your team early!</p>
+                            <span class="announcement-date">July 17, 2025</span>
+                        </div>
+
+                        <div class="announcement-slide">
+                            <h3>📢 New Dev Onboarding Docs</h3>
+                            <p>Check out the revamped documentation portal. It’s easier, faster, and prettier!</p>
+                            <span class="announcement-date">July 14, 2025</span>
+                        </div>
+                    </div>
+
+                    <button id="next-btn">
+                        <img src="./assets/icons/arrow.svg" alt="">
+                    </button>
+                </div>
+
+                <!-- office links -->
+                <div class="office_links">
+                    <h2>🔗 Office Links</h2>
+                    <ul class="office-links__list">
+                        <li><a href="#" target="_blank">GitHub Repos</a></li>
+                        <li><a href="#" target="_blank">Documentation</a></li>
+                        <li><a href="#" target="_blank">HR Portal</a></li>
+                        <li><a href="#" target="_blank">Team Calendar</a></li>
+                        <li><a href="#" target="_blank">Company Wiki</a></li>
+                    </ul>
+                </div>
+
+                <!-- footer -->
+                <div class="footer">
+                    <p>
+                        &copy 2025 | Made with ❤️ By Akrem M.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
