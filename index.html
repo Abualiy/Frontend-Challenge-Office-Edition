@@ -8,11 +8,12 @@
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <!-- Loading -->
-    <!-- <div class="loader_container" id="loader">
+    <div class="loader_container" id="loader">
         <div class="loader">
             <div class="box">
                 <div class="logo">
@@ -25,9 +26,15 @@
             <div class="box"></div>
             <div class="box"></div>
         </div>
-    </div> -->
+    </div>
 
-    <div class="main_container " id="main-content">
+    <!-- time display  -->
+    <div id="time-widget" class="time-widget hidden">
+        <h2 id="time">--:--</h2>
+        <p id="date">Loading...</p>
+    </div>
+
+    <div class="main_container hidden" id="main-content">
         <!-- header -->
         <div class="header">
             <section>
@@ -73,13 +80,173 @@
 
         <div class="main">
             <div class="left_side">
-                <button class="active">📆 Overview</button>
-                <button>✅ Tasks</button>
-                <button>📣 Communication</button>
-                <button>💬 Wellness</button>
+                <button class="active" id="overviewBtn">📆 Overview</button>
+                <button id="tasksBtn">✅ Tasks</button>
+                <button id="communicationBtn">📣 Communication</button>
+                <button id="wellnessBtn">💬 Wellness</button>
             </div>
-            <div class="main_content"></div>
-            <div class="right_side">
+            <div class="main_content ">
+                <!-- overview -->
+                <div class="overview content_box active" id="overview">
+                    <!-- upcoming event -->
+                    <section class="upcoming-events">
+                        <h2>📅 Upcoming Events</h2>
+                        <ul>
+                            <li><strong>July 17:</strong> Dev Team Sync – 10:00 AM</li>
+                            <li><strong>July 19:</strong> Alfeyn Tech Hackathon Kickoff – 1:00 PM</li>
+                            <li><strong>July 21:</strong> Monthly All-Hands – 4:00 PM</li>
+                        </ul>
+                    </section>
+
+                    <div class="second">
+                        <!-- todays agenda -->
+                        <section class="todays-agenda">
+                            <h2>📌 Today's Agenda</h2>
+                            <ul>
+                                <li>9:00 AM – Daily Standup</li>
+                                <li>11:00 AM – Backend Sync</li>
+                                <li>2:00 PM – UI Review with Design Team</li>
+                                <li>4:30 PM – Code Refactoring</li>
+                            </ul>
+                        </section>
+
+                        <!-- This Week's Achievements  -->
+                        <section class="weekly-achievements">
+                            <h2>🏆 This Week's Achievements</h2>
+                            <canvas id="weeklyAchievementsChart" width="400" height="180"></canvas>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- tasks -->
+                <div class="tasks content_box " id="tasks">
+                    <div class="side">
+                        <!-- Today’s Tasks -->
+                        <section class="today-tasks">
+                            <h2>✅ Today's Tasks</h2>
+                            <ul id="task-list">
+                                <li><label><input type="checkbox" class="task-check"> Code Review</label></li>
+                                <li><label><input type="checkbox" class="task-check"> Standup Meeting</label></li>
+                                <li><label><input type="checkbox" class="task-check"> UI Bug Fixes</label></li>
+                            </ul>
+                        </section>
+
+                        <!-- To-Do List -->
+                        <section class="todo-list">
+                            <h2>📝 To-Do List</h2>
+                            <div class="input_field">
+                                <input type="text" id="todo-input" placeholder="Add new task" />
+                                <button id="add-todo">Add</button>
+                            </div>
+                            <ul id="todo-list"></ul>
+                        </section>
+                    </div>
+
+                    <!-- Task Progress -->
+                    <section class="task-progress">
+                        <h2>📊 Task Progress</h2>
+                        <canvas id="taskProgressChart" width="300" height="300"></canvas>
+                        <p id="taskStats"></p>
+                    </section>
+
+                </div>
+
+                <!-- communication -->
+                <div class="communication content_box " id="communication">
+                    <section class="dev">
+                        <h2>💡 Developer Highlight</h2>
+                        <div class="highlight-card active" id="dev_slide">
+                            <div class="profile avatar_1">
+                                <img src="./assets/avatars/avatar_1.jpg" alt="avatar-1">
+                            </div>
+                            <h3>🌟 Daniel Abebe</h3>
+                            <p>Contributed to the new CI/CD pipeline and reduced build times by 40%.👏</p>
+                        </div>
+
+                        <div class="highlight-card" id="slide">
+                            <div class="profile avatar_2">
+                                <img src="./assets/avatars/avater_2.jpg" alt="avatar-2">
+
+                            </div>
+                            <h3>Johan Tomsen</h3>
+                            <p>Contributed to the new Security service and reduced build times by 50%.👏</p>
+
+                        </div>
+
+                        <div class="highlight-card" id="slide">
+                            <div class="profile avatar_3">
+                                <img src="./assets/avatars/avatar_3.jpg" alt="avatar-3">
+
+                            </div>
+                            <h3>🌟 Gabreila Tom</h3>
+                            <p>Contributed to the new UX/UI and reduced build times by 60%.👏</p>
+                        </div>
+
+                        <div class="buttons">
+                            <button id="prev_dev">
+                                <img src="./assets/icons/arrow.svg" alt="Prev" style="transform: rotate(180deg);">
+                            </button>
+                            <button id="next_dev">
+                                <img src="./assets/icons/arrow.svg" alt="Next" id="next_dev">
+                            </button>
+                        </div>
+                    </section>
+                    <div class="side">
+                        <section class="birthday">
+                            <h2>🎂 Today's Birthdays</h2>
+                            <ul>
+                                <li><strong>Amina Yusuf</strong> – Frontend Developer</li>
+                                <li><strong>Selam Kidane</strong> – QA Engineer</li>
+                            </ul>
+                        </section>
+                        <section class="vibe-poll" id="vibe-poll" class="widget">
+                            <h2>🎵 Rate Today’s Office Vibe</h2>
+                            <div class="emoji-options">
+                                <button class="emoji-btn" data-vote="😍">😍</button>
+                                <button class="emoji-btn" data-vote="😊">😊</button>
+                                <button class="emoji-btn" data-vote="😐">😐</button>
+                                <button class="emoji-btn" data-vote="😴">😴</button>
+                                <button class="emoji-btn" data-vote="😩">😩</button>
+                            </div>
+                            <canvas id="vibePollChart" width="200" height="100"></canvas>
+                            <p id="vibePollMessage" class="poll-result"></p>
+                        </section>
+                    </div>
+                </div>
+                <!-- wellness -->
+                <div class="wellness content_box " id="wellness">
+
+
+                    <div class="side">
+                        <section id="motivation-quote" class="widget">
+                            <h2>🌟 Motivation Quote</h2>
+                            <p class="text">
+                                <q id="quoteText">Loading..</q>
+                            </p>
+                        </section>
+                        <section id="dev-tip" class="widget">
+                            <h2>💡 Dev Tip</h2>
+                            <p class="text" id="devTipText">Loading...</p>
+                        </section>
+
+                    </div>
+                    <div class="side">
+
+                        <section id="pomodoro" class="widget">
+                            <h2>🍅 Pomodoro Timer</h2>
+                            <p id="timer">30:00</p>
+                            <button id="startPomodoro">Start</button>
+                            <button id="resetPomodoro">Reset</button>
+                        </section>
+                        <section id="office-radio" class="widget">
+                            <h2>🎧 Office Radio</h2>
+                            <input type="file" id="audioPicker" accept="audio/*">
+                            <audio id="audioPlayer" controls></audio>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="right_side content_box">
                 <!-- announcement -->
                 <div class="announcement-carousel">
                     <button id="prev-btn">
