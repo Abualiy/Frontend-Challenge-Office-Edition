@@ -10,18 +10,18 @@
 @import url('./module/css/font_schema.css');
 
 /* hamburger menu */
-@import url('module/css/hamburger.css');
+@import url('./module/css/hamburger.css');
 
 /* main css */
-@import url('/module/css/xLargeDevice.css');
+@import url('./module/css/xLargeDevice.css');
 
 /* ========= responsive design ======== */
 /* large device */
-@import url('/module/css/largeDevice.css');
+@import url('./module/css/largeDevice.css');
 /* medium device */
-@import url('/module/css/mediumDevice.css');
+@import url('./module/css/mediumDevice.css');
 /* small device */
-@import url('/module/css/smallDevice.css');
+@import url('./module/css/smallDevice.css');
 
 
 
