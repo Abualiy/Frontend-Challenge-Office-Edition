@@ -1,6 +1,7 @@
 import { achievementChart } from "./module/js/achievementChart.js";
 import { darkmode } from "./module/js/darkmode.js";
 import { getGreeting } from "./module/js/greating.js";
+import { hamburger } from "./module/js/hamburger.js";
 import { navigator } from "./module/js/navigator.js";
 import { pomodoro } from "./module/js/pomodoro.js";
 import { quoteTip } from "./module/js/quoteTip.js";
@@ -21,24 +22,24 @@ window.addEventListener("load", () => {
     splash.style.display = "none";
     main.classList.remove("hidden");
     time_widget.classList.remove("hidden");
-  }, 5000);
+  }, 3000);
 });
 
-// timeer 
+// timeer
 const timeEl = document.getElementById("time");
 const dateDayEl = document.getElementById("date");
 
 const updateTime = () => {
   const now = new Date();
   let hours = now.getHours();
-  const mins = now.getMinutes().toString().padStart(2, '0');
-  const sec = now.getSeconds().toString().padStart(2, '0');
+  const mins = now.getMinutes().toString().padStart(2, "0");
+  const sec = now.getSeconds().toString().padStart(2, "0");
 
   const ampm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
   hours = hours ? hours : 12; // 0 becomes 12
 
-  const timeStr = `${hours.toString().padStart(2, '0')}:${mins}:${sec} ${ampm}`;
+  const timeStr = `${hours.toString().padStart(2, "0")}:${mins}:${sec} ${ampm}`;
   timeEl.textContent = timeStr;
 
   const days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
@@ -46,10 +47,8 @@ const updateTime = () => {
   dateDayEl.textContent = `${days[now.getDay()]}, ${formattedDate}`;
 };
 
-
 setInterval(updateTime, 1000);
 updateTime();
-
 
 window.addEventListener("DOMContentLoaded", () => {
   // dark_mode switch button
@@ -107,8 +106,21 @@ window.addEventListener("DOMContentLoaded", () => {
   slider(slidesDev, prevBtnDev, nextBtnDev);
 });
 
+// hamburger menu
+const menuBtn = document.getElementById("menu_checkbox");
+const menu = document.getElementById("menu");
+hamburger(menuBtn, menu);
+
+// right side mobile view 
+const sideBtn = document.getElementById("sideBtn")
+const right_side = document.getElementById("right_side")
+const side_menu = document.getElementById("side_menu")
+
+hamburger(sideBtn, right_side)
+hamburger(sideBtn, side_menu)
+
 // weekly achievement chart
-achievementChart()
+achievementChart();
 
 // task progress
 taskProgress();
@@ -120,10 +132,10 @@ toDo();
 vibePoll();
 
 // ==== QUOTE ====
-quoteTip()
+quoteTip();
 
 // ==== POMODORO ====
-pomodoro()
+pomodoro();
 
 // office radio
-radio()
+radio();

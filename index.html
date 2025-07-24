@@ -38,8 +38,19 @@
         <!-- header -->
         <div class="header">
             <section>
+                <div class="hum_menu" id="hum_menu">
+                <input type="checkbox" id="menu_checkbox" value="checkbox">
+                <label for="menu_checkbox">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </label>
+            </div>
+
+            <div class="logo_greeting">
                 <img src="./assets/logo_2.jpg" alt="alfeyn_tech_logo" width="200px">
-                <h1 id="greeting"></h1>
+                <h1 id="greeting">Loading...</h1>
+            </div>
             </section>
 
             <div class="icons">
@@ -79,7 +90,7 @@
         </div>
 
         <div class="main">
-            <div class="left_side">
+            <div class="left_side" id="menu">
                 <button class="active" id="overviewBtn">📆 Overview</button>
                 <button id="tasksBtn">✅ Tasks</button>
                 <button id="communicationBtn">📣 Communication</button>
@@ -246,7 +257,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right_side content_box">
+            <div class="right_side content_box" id="right_side">
                 <!-- announcement -->
                 <div class="announcement-carousel">
                     <button id="prev-btn">
@@ -296,6 +307,12 @@
                         &copy 2025 | Made with ❤️ By Akrem M.
                     </p>
                 </div>
+            </div>
+
+            <div class="side_menu" id="side_menu">
+                <button id="sideBtn">
+                    <img src="./assets/icons/arrow.svg" alt="" >
+                </button>
             </div>
         </div>
     </div>

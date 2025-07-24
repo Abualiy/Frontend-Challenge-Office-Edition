@@ -1,0 +1,211 @@
+@media (max-width: 600px) {
+    #time-widget {}
+
+
+    .main_container {
+        overflow: hidden;
+    }
+
+    /* header  */
+    .header .hum_menu {
+        display: block;
+    }
+
+    .header .logo_greeting {
+        flex-direction: column;
+    }
+
+    .header .logo_greeting img {
+        width: 100px;
+    }
+
+    .header .logo_greeting h1 {
+        font-size: .7em;
+    }
+
+    .header .icon {
+        margin-right: 2rem;
+    }
+
+    .header .icons .avatar {
+        width: 20px;
+    }
+
+    /* left side navigation bar */
+
+    .main .left_side {
+        position: absolute;
+        left: -4rem;
+        width: 30%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .25s;
+    }
+
+    .main .left_side.show {
+        left: 1rem;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ==========main contents========== */
+    h2,
+    li {
+        font-size: .8em;
+    }
+
+
+    p,
+    a,
+    button,
+    span,
+    #devTipText,
+    #quoteText {
+        font-size: .7em;
+    }
+
+    #time-widget h2,
+    p {
+        font-size: 1.2rem;
+    }
+
+    #pomodoro p {
+        font-size: 2rem;
+
+    }
+
+    .main .main_content {
+        width: 100%;
+        max-height: fit-content;
+    }
+
+
+    .main .main_content .overview .second,
+    .main .main_content .tasks,
+    .main .main_content .communication {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .main .main_content .tasks {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .todo-list {
+        max-height: 8rem;
+    }
+
+    .main .main_content .overview section.upcoming-events,
+    .main .main_content .overview .second {
+        height: fit-content;
+    }
+
+    .main .main_content .overview .second .todays-agenda,
+    .main .main_content .overview .second .weekly-achievements,
+    .main .main_content .tasks .side,
+    .main .main_content .tasks .task-progress {
+        width: 95%;
+        padding: 10px;
+    }
+
+
+    .main .main_content .communication {
+        margin-top: -3rem;
+    }
+
+    .main .main_content .communication .dev .highlight-card {
+        margin: .2rem 0;
+    }
+
+    .main .main_content .communication .dev .highlight-card .profile {
+        height: 5rem;
+    }
+
+    .main .main_content .communication .dev .highlight-card p {
+        font-size: .5em;
+    }
+
+    .main .main_content .communication .side {
+        margin-top: -4rem;
+        width: 90%;
+
+    }
+
+    .main .main_content .communication .vibe-poll {
+        margin-top: -1rem;
+
+    }
+
+    .main .main_content .communication section.birthday {
+        background-size: 20%;
+    }
+
+
+
+    .main .main_content .wellness .side {
+        width: 36%;
+        margin-right: 7%;
+    }
+
+    .main .main_content .wellness .text {
+        font-size: 1em;
+    }
+
+
+
+
+    #taskProgressChart {
+        width: 100px;
+    }
+
+
+    /* ==========main contents========== */
+
+    /* right side content */
+
+    .main .right_side {
+        position: absolute;
+        width: 40%;
+        height: 65%;
+        right: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: .25s;
+    }
+
+    .main .right_side.show {
+        width: 80%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* menu btn for right side content */
+    .side_menu {
+        display: block;
+        position: absolute;
+        right: 0;
+    }
+
+    .side_menu button {
+        padding: 5px;
+        border: 1px solid #000;
+        border-right: none;
+        background: #fff;
+
+    }
+
+    .side_menu button img {
+        transform: rotate(180deg);
+        transition: .25s;
+    }
+
+    .side_menu.show button img {
+        transform: rotate(0deg);
+    }
+
+    /* .main_container .main {
+        display: none;
+    } */
+}
